@@ -12,6 +12,7 @@ mouse = MouseController()
 
 #VARIABLES
 clicks = 0  # Leave this at 0
+menu = 0  # Leave this at 0
 
 #FUNCTIONS
 def Countdown():
@@ -39,10 +40,20 @@ def Instaclick():
             mouse.click(Button.left, int(clicks))
 
 #MENU
-menu = input('1-Instaclicks; 0-Sair')
-if menu == 1:
-    Instaclick()
-elif menu == 0:
-    print("Obrigado por usar DomomaxBR's autoclicker. Fechando...")
-    time.sleep(5)
-    exit()
+print('Selecione o tipo de autoclicker')
+while menu == 0:
+    menu = input('1-Instaclicks; 0-Sair ')
+    try:
+        menu = int(menu)
+    except ValueError:
+        print('Não é um número, por favor coloque um número válido.')
+        menu = 0
+        continue
+    if menu == 1:
+        Instaclick()
+        menu = 0
+        break
+    elif menu == 0:
+        print("Obrigado por usar DomomaxBR's autoclicker. Fechando...")
+        time.sleep(3)
+        exit()
