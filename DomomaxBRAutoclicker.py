@@ -7,25 +7,26 @@ keyboard = KeyboardController()
 mouse = MouseController()
 
 # VARIABLES - Leave all those at the defined values
-Version = 1.2
+Version = 1.3
 WillClick = 0
 menu = -1
 delay = 0
 Clicked = 0
-coutnumber = 0
+cntdown = 0
 
 
 # FUNCTIONS
 def countdown():
-    countnumber = 5
-    while countnumber >= 1:
-        print(countnumber)
-        countnumber -= 1
+    cntdown = 5
+    while cntdown >= 1:
+        print(cntdown)
+        cntdown -= 1
         time.sleep(1)
 
-#def cls():
+
+# def cls():
 #    print('\n' * 100)
-#CLS used to clear the screen
+# CLS used to clear the screen
 
 # MENU
 print('Selecione o tipo de autoclicker')
